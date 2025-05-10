@@ -4,27 +4,21 @@
 
 type Conversation {
   """Example field (placeholder)"""
-  exampleField: Int!
+  id: Int!
+  userId: String
+  createdAt: DateTime!
 }
 
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
-  conversation(id: Int!): Conversation!
+  hello: String!
 }
 
 type Mutation {
-  createConversation(createConversationInput: CreateConversationInput!): Conversation!
-  updateConversation(updateConversationInput: UpdateConversationInput!): Conversation!
-  removeConversation(id: Int!): Conversation!
+  startConversation: Conversation!
   login(email: String!, password: String!): String!
-}
-
-input CreateConversationInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-input UpdateConversationInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
 }

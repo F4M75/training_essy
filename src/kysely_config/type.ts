@@ -7,14 +7,13 @@ import {
 } from 'kysely';
 
 export interface Database {
-  converstation: ConversationTable;
+  conversation: ConversationTable;
 }
 
 export interface ConversationTable {
   id: Generated<number>;
-
   user_id: string;
-  created_at: ColumnType<Date, string | undefined, never>;
+  created_at: ColumnType<Date | undefined, never>;
 }
 
 export type Conversation = Selectable<ConversationTable>;

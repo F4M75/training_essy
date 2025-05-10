@@ -15,6 +15,7 @@ type Mutation {
   createConversation(createConversationInput: CreateConversationInput!): Conversation!
   updateConversation(updateConversationInput: UpdateConversationInput!): Conversation!
   removeConversation(id: Int!): Conversation!
+  login(email: String!, password: String!): String!
 }
 
 input CreateConversationInput {
